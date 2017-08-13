@@ -3,8 +3,6 @@ Determining, if system is stable.
 
 [![Build Status](https://travis-ci.org/tompollard/phd_thesis_markdown.svg?branch=master)](https://travis-ci.org/tompollard/phd_thesis_markdown)  
 
-Source: https://github.com/computeVision/pcl_stereoimages/blob/master/doc/report.pdf
-
 Project 1:
    * [Theory 1](https://github.com/jS5t3r/signalprocessing/blob/master/proj1/doc/ass3_1.pdf)
    * [Theory 2](https://github.com/jS5t3r/signalprocessing/blob/master/proj1/doc/ass3_2.pdf)
