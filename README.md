@@ -6,13 +6,13 @@ Determining, if system is stable
 Source: https://github.com/computeVision/pcl_stereoimages/blob/master/doc/report.pdf
 
 Project 1:
-   * [Theorie 1](https://github.com/jS5t3r/signalprocessing/blob/master/proj1/doc/ass3_1.pdf)
-   * [Theorie 2](https://github.com/jS5t3r/signalprocessing/blob/master/proj1/doc/ass3_2.pdf)
-   * [Theorie 3](https://github.com/jS5t3r/signalprocessing/blob/master/proj1/doc/ass3_3.pdf)
+   * [Theory 1](https://github.com/jS5t3r/signalprocessing/blob/master/proj1/doc/ass3_1.pdf)
+   * [Theory 2](https://github.com/jS5t3r/signalprocessing/blob/master/proj1/doc/ass3_2.pdf)
+   * [Theory 3](https://github.com/jS5t3r/signalprocessing/blob/master/proj1/doc/ass3_3.pdf)
    * [Simulation protocol](https://github.com/jS5t3r/signalprocessing/blob/master/proj1/src/Simulationsprotokoll.pdf)
    
 Project 2: 
-   * [Theorie](https://github.com/jS5t3r/signalprocessing/blob/master/proj2/doc/ass4_1.pdf)
+   * [Theory](https://github.com/jS5t3r/signalprocessing/blob/master/proj2/doc/ass4_1.pdf)
    * [Simulation protocol](https://github.com/jS5t3r/signalprocessing/blob/master/proj2/doc/ass4_3.pdf)
 
 ## Installation
