@@ -1,0 +1,675 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\date{}
+
+\usepackage{todonotes}
+\bibliographystyle{plain}
+\usepackage{fancyhdr}
+\fancyhf{}% Clear header footer
+\usepackage{listings}
+    \usepackage{color}
+    \definecolor{hellgelb}{rgb}{1,1,0.85}
+    \definecolor{colKeys}{rgb}{0,0,1}
+    \definecolor{colIdentifier}{rgb}{0,0,0}
+    \definecolor{colComments}{rgb}{1,0,0}
+    \definecolor{colString}{rgb}{0,0.5,0}
+    \lstset{%
+          language=Matlab,%
+          float=hbp,%
+          basicstyle=\footnotesize\ttfamily,%
+          identifierstyle=\color{colIdentifier},%
+          keywordstyle=\color{colKeys},%
+          stringstyle=\color{colString},%
+          commentstyle=\itshape\color{colComments},%
+          columns=fixed,
+          tabsize=4,%
+          %frame=single,%
+          extendedchars=true,%
+          showspaces=false,%
+          showstringspaces=false,%
+          numbers=left,%
+          numberstyle=\tiny\ttfamily,%
+          numbersep=1em,%
+          breaklines=true,%
+          breakindent=10pt,
+          breakautoindent=true,%
+          captionpos=t,%
+          xleftmargin=1em,%
+          xrightmargin=\fboxsep%
+    }
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_author "Peter Lorenz"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Left Header
+LORENZ Peter, REICHEL Robert
+\begin_inset space \hfill{}
+\end_inset
+
+ Assignment 4
+\end_layout
+
+\begin_layout Section*
+Octave Aufgabe 4.3
+\end_layout
+
+\begin_layout Section*
+(a) Implementierung der DCT Matrix C [NxN]
+\end_layout
+
+\begin_layout Standard
+Die diskrete Kosinus Transformation wird anhand einer Matrix Vektor Multiplikati
+on berechnet:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{DCT}=Cx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+wobei 
+\begin_inset Formula $x_{DCT}=[X[0],X[1],...,X[N-1]]^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Um die Matrix C zu berechnen haben wir eine Funktion in einer eigenen Datei
+ mit dem Namen 
+\emph on
+calcC(N)
+\emph default
+ erstellt, wobei 
+\emph on
+N
+\emph default
+ nur die Länge eines Vektors gemeint ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+function [ C ] = calcC( N )
+\end_layout
+
+\begin_layout Plain Layout
+
+	tmp = zeros(N,N); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	for k = 0:N-1     
+\end_layout
+
+\begin_layout Plain Layout
+
+		for n = 0:N-1   
+\end_layout
+
+\begin_layout Plain Layout
+
+			tmp(k+1,n+1) = cos(pi/N*(n+0.5)*k);     
+\end_layout
+
+\begin_layout Plain Layout
+
+		end
+\end_layout
+
+\begin_layout Plain Layout
+
+	end
+\end_layout
+
+\begin_layout Plain Layout
+
+	C = tmp;
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+DCT Matrix
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:DCT-Matrix"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:DCT-Matrix"
+
+\end_inset
+
+ wurde die DCT Matrix berechnet, in dem der DCT-II abgewandelt wurde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\sum_{n=0}^{N-1}cos\left(\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right),\;k=0,1,\dots,N-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Als Input haben wir den Matlab Befehl randn() zur Hilfe genommen.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+x = randn(65, 1); 
+\end_layout
+
+\begin_layout Plain Layout
+
+C = calcC(length(x)); 
+\end_layout
+
+\begin_layout Plain Layout
+
+x_dct = C*x;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Berechnung des DCT anhand einer zufälligen Folge.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zustätzlich haben wir noch die orignale Folge und die mit DCT veränderte
+ Folge genommen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/43a.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Originalfolge und DCT veränderte Folge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+(b) Sind die Zeilen von C orthogonal zueinander?
+\end_layout
+
+\begin_layout Standard
+Nein, es sind nicht alle orthogonal zueinander.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for i = 1:N     
+\end_layout
+
+\begin_layout Plain Layout
+
+	for m = 1:N         
+\end_layout
+
+\begin_layout Plain Layout
+
+		if(i ~= m)                      
+\end_layout
+
+\begin_layout Plain Layout
+
+			orthogonal = dot(C(i,:), C(m, :));             
+\end_layout
+
+\begin_layout Plain Layout
+
+			if orthogonal > 0.0000001                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				disp('is orthogonal');             
+\end_layout
+
+\begin_layout Plain Layout
+
+			else                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				disp('is not orthogonal');             
+\end_layout
+
+\begin_layout Plain Layout
+
+			end         
+\end_layout
+
+\begin_layout Plain Layout
+
+		end     
+\end_layout
+
+\begin_layout Plain Layout
+
+	end 
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Überprüfung, ob die Zeilen orhtogonal sind.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Überprüfung,-ob-die"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Überprüfung,-ob-die"
+
+\end_inset
+
+ iterieren wir übder die Zeilen der Matrix C, wobei wir mit der inneren
+ Schleife wiederum über die Zeilen der Matrix C iterieren und mit einer
+ If-Abfrage überprüfen, ob es nicht die gleichen Vektoren sind.
+ Wenn sie es nicht sind, wird das das Dot-Produkt der beiden Vektoren berechnet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c_{1}\cdot c_{2}\overset{!}{=}0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wenn der resultierende Skalar 0 ergibt, sind sie orthogonal.
+ 
+\end_layout
+
+\begin_layout Section*
+(c) Wie muss die Formel DCT-II geändert werden?
+\end_layout
+
+\begin_layout Standard
+Es wurde uns der Tipp gegeben, under folgenden Url
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.spsc.tugraz.at/sites/default/files/hw4_Anlage2017.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ nachzuschauen.
+ Darin steht der Tipp, dass die erste Zeile der DCT Matrix C immer 1er stehen
+ und diese durch 
+\begin_inset Formula $\sqrt{2}$
+\end_inset
+
+ dividiert werden soll.
+ Aber auch dass die Einträge der Matrix C zuerst normalisiert werden sollen,
+ indem man in der Zeile 5 den jeweiligen Eintrag mit 
+\begin_inset Formula $\sqrt{\frac{2}{N}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+function [ modC ] = modifiedC( N ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	C = zeros(N,N); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	for k = 0:N-1     
+\end_layout
+
+\begin_layout Plain Layout
+
+		for n = 0:N-1        
+\end_layout
+
+\begin_layout Plain Layout
+
+			C(k+1,n+1) = sqrt(2/N)*cos((n+0.5)*k*pi/N);     
+\end_layout
+
+\begin_layout Plain Layout
+
+		end 
+\end_layout
+
+\begin_layout Plain Layout
+
+	end
+\end_layout
+
+\begin_layout Plain Layout
+
+	C(1,:) = C(1,:) / sqrt(2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	modC = C;
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modifizierter Algorithmus von Punkt a
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Modifizierter-Algorithmus-von"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Anschließend wird noch überprüft, ob 
+\begin_inset Formula $C\cdot C^{T}=C^{T}\cdot C=I$
+\end_inset
+
+.
+ Damit weiss man, dass alle Zeilen in C orhtogonal zueinander sind.
+ Das Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Modifizierter-Algorithmus-von"
+
+\end_inset
+
+ kann in der Datei 
+\emph on
+modifiedC.m
+\emph default
+ gefunden werden.
+\end_layout
+
+\end_body
+\end_document

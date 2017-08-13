@@ -1,0 +1,581 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\date{}
+
+\usepackage{todonotes}
+\bibliographystyle{plain}
+\usepackage{fancyhdr}
+\fancyhf{}% Clear header footer
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_author "Peter Lorenz"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Left Header
+LORENZ Peter, REICHEL Robert
+\begin_inset space \hfill{}
+\end_inset
+
+ Assignment 4
+\end_layout
+
+\begin_layout Section*
+Analytische Aufgabe 4.1
+\end_layout
+
+\begin_layout Standard
+Gegeben ist ein Signal 
+\begin_inset Formula $x_{c}(t)$
+\end_inset
+
+ und die Information, dass dieses Signal Frequenzanteile von 0 bis 1000
+ Hz besitzt.
+ Weiters ist bekannt, dass das Signal bei der Frequenz 
+\begin_inset Formula $f_{s}=300\,Hz$
+\end_inset
+
+ eine Störung beinhaltet und diese Frequenz somit mit einem Filter zu eliminiere
+n ist.
+ Um dies zu tun, wird ein Filter mit jeweils 2 Polstellen und Nullstellen
+ verwendet, dessen Übertragungsfunktion wie folgt aussieht:
+\begin_inset Formula 
+\[
+H(z)=A\cdot\frac{(z-e^{j\varTheta_{0}})\cdot(z-e^{-j\varTheta_{0}})}{(z-r_{p}\cdot e^{j\varTheta_{0}})\cdot(z-r_{p}\cdot e^{-j\varTheta_{0}})},\;r_{p}\in\mathbb{R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hier ist ersichtlich, dass die Nullstellen der Übertragungsfunktion am Einheitsk
+reis mit dem Winkel 
+\begin_inset Formula $\pm\varTheta_{0}$
+\end_inset
+
+liegen und die Polstellen den selben Winkel wie die Nullstelen haben, jedoch
+ im Abstand r zum Ursprung stehen.
+\end_layout
+
+\begin_layout Standard
+A ist wiederum ein multiplikativer Faktor.
+ Da keine Information über eventuelle multiplikative Faktoren bekannt ist,
+ wird dieser solange mit A bezeichnet.
+ Dieser hat keinen Einfluss auf die Lage der Pole und Nullstellen der Übertragun
+gsfunktion, jedoch spielt er für den Betragsfrequenzgang eine wesentliche
+ Rolle.
+\end_layout
+
+\begin_layout Standard
+Weiters wird das Signal 
+\begin_inset Formula $x_{c}(t)$
+\end_inset
+
+ mit einem Oszilloskop und einer Frequenz 
+\begin_inset Formula $f_{sample}=2000\,Hz$
+\end_inset
+
+ abgetastet.
+\end_layout
+
+\begin_layout Section*
+(a) 
+\end_layout
+
+\begin_layout Standard
+Es ist 
+\begin_inset Formula $\varTheta_{0}$
+\end_inset
+
+ zu berechnen, um die Störfrequenz bei 300 Hz zu unterdrücken.
+\end_layout
+
+\begin_layout Standard
+Um dies zu bewerkstellen, muss ein Zusammenhang zwischen dem zeitkontinuierliche
+n Signal 
+\begin_inset Formula $x_{c}(t)$
+\end_inset
+
+ und dem zeitdiskreten Signal 
+\begin_inset Formula $x[n]$
+\end_inset
+
+gefunden werden.
+ Genau das gibt die Bilineartransformation an, welche wie folgt lautet:
+\begin_inset Formula 
+\[
+\omega=\frac{2}{T_{D}}\cdot\tan\left(\frac{\varTheta}{2}\right)
+\]
+
+\end_inset
+
+wobei 
+\begin_inset Formula $T_{D}$
+\end_inset
+
+die Diskretisierungszeit ist, 
+\begin_inset Formula $\omega$
+\end_inset
+
+die Kreisfrequenz und 
+\begin_inset Formula $\varTheta$
+\end_inset
+
+aus dem Argument der DTFT kommt.
+ Somit gibt es einen Zusammenhang zwischen der Kreisfrequenz im zeitkontinuierli
+chen und dem Winkel 
+\begin_inset Formula $\varTheta$
+\end_inset
+
+der DTFT.
+ Nun kann durch Umformen der Gleichung und den Zusammenhängen 
+\begin_inset Formula $f=\frac{1}{T}$
+\end_inset
+
+ und 
+\begin_inset Formula $\omega=2\cdot\pi\cdot f$
+\end_inset
+
+ der Winkel 
+\begin_inset Formula $\varTheta_{0}$
+\end_inset
+
+zu berechnen, welcher im zeitkontinuierlichen 300 Hz entspricht:
+\begin_inset Formula 
+\begin{align*}
+\omega & =\frac{2}{T_{D}}\cdot\tan\left(\frac{\varTheta_{0}}{2}\right)\\
+2\cdot\pi\cdot f_{s} & =\frac{2}{T_{D}}\cdot\tan\left(\frac{\varTheta_{0}}{2}\right)\\
+T_{D}\cdot\pi\cdot300 & =\tan\left(\frac{\varTheta_{0}}{2}\right)\\
+2\cdot\arctan\left(\frac{1}{2000\,Hz}\cdot\pi\cdot300\,Hz\right) & =\varTheta_{0}\\
+\varTheta_{0} & =0,88\,rad
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hier gilt 
+\begin_inset Formula $T_{D}=\frac{1}{f_{sample}}$
+\end_inset
+
+, da die Diskretisierungszeit dem Kehrwert der Abtastfrequenz entspricht.
+\end_layout
+
+\begin_layout Standard
+Nun muss der Winkel 
+\begin_inset Formula $\varTheta_{0}$
+\end_inset
+
+nur mehr von Radiant in Grad umgewandelt werden:
+\begin_inset Formula 
+\begin{align*}
+\varTheta_{0}\left(\text{°}\right) & =\frac{\varTheta_{0}\left(rad\right)\cdot180}{\pi}\\
+\varTheta_{0}\left(\text{°}\right) & =\frac{0,88\cdot180}{\pi}=50,42\text{°}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Somit ist klar, dass um die Störfrequenz bei 300 Hz zu unterdrücken, die
+ Nullstellen der Übertragungsfunktion bei 
+\begin_inset Formula $e^{\pm j50,42\text{°}}$
+\end_inset
+
+liegen müssen, da dort die Übertragungsfunktion gegen Null geht , somit
+ das Ausgangssignal bei dieser Frequenz gegen Null geht und dadurch die
+ Störfrequenz eliminiert wird.
+\end_layout
+
+\begin_layout Section*
+(b)
+\end_layout
+
+\begin_layout Standard
+Das Pol-Nullstellen Diagramm für H(z) ist für die Fälle i) 
+\begin_inset Formula $r_{p}=0.01$
+\end_inset
+
+und ii) 
+\begin_inset Formula $r_{p}=0.99$
+\end_inset
+
+ zu zeichnen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/ROC_r0_99.jpeg
+	scale 25
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Das Pol-Nullstellen Diagramm für den Fall ii) 
+\begin_inset Formula $r_{p}=0,99$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/ROC_r0_01.jpeg
+	scale 25
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Das Pol-Nullstellen Diagramm für den Fall i) 
+\begin_inset Formula $r_{p}=0,01$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+(c)
+\end_layout
+
+\begin_layout Standard
+Die Übertragungsfunktion des Systems in Abhängigkeit von
+\begin_inset Formula $\varTheta_{0}$
+\end_inset
+
+und 
+\begin_inset Formula $r_{p}$
+\end_inset
+
+ist gesucht.
+ Hierzu muss die allgemeine Form einer Übertragungsfunktion bekannt sein:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(z)=X\cdot\frac{(z-z_{n,1})\cdot(z-z_{n,2})\text{\cdot....\cdot(z-z_{n,N})}}{(z-z_{p,1})\cdot(z-z_{p,2})\text{\cdot....\cdot(z-z_{p,M})}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+wobei X ein multiplikativer Faktor ist, welcher keinen Einfluss auf die
+ Lage der Pole und Nullstellen hat, jedoch für den Betragsfrequezgang wichtig
+ ist, 
+\begin_inset Formula $z_{n,1},...,z_{n,N}$
+\end_inset
+
+ die Nullstellen der Übertragungsfunktion sind und 
+\begin_inset Formula $z_{p,1},...,z_{p,M}$
+\end_inset
+
+ die Polstellen der Übertragungsfunktion sind.
+ Weiters ist es wichtig anzumerken, dass die Pole und Nullstellen komplexe
+ Werte sind, welche durch Betrag und Winkel sowie als komplexe Zahlen dargestell
+t werden können, wobei folgende Zusammenhänge gelten:
+\begin_inset Formula 
+\begin{align*}
+z & =a+jb\\
+z & =|z|\cdot e^{jarg(z)}\\
+|z| & =\sqrt{a^{2}+b^{2}}\\
+arg(z) & =arctan(\frac{b}{a})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+wobei arg(z) der Phasenwinkel der komplexen Zahl z ist.
+\end_layout
+
+\begin_layout Standard
+Mithilfe dieser Grundlagen und der Informationen über die Pole und Nullstellen
+ kann nun die Übertragungsfunktion aufgestellt werden:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(z)=A\cdot\frac{(z-e^{j\varTheta_{0}})\cdot(z-e^{-j\varTheta_{0}})}{(z-r_{p}\cdot e^{j\varTheta_{0}})\cdot(z-r_{p}\cdot e^{-j\varTheta_{0}})},\;r_{p}\in\mathbb{R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zusätzlich soll der Filter die Bedingung 
+\begin_inset Formula $H(z)\mid_{z=1}=1$
+\end_inset
+
+ erfüllen.
+ Hierfür wird nun der Faktor A benötigt.
+ Zuerst ist der Wert von H(z) ohne Berücksichtigung von A an der Stelle
+ z = 1 auszurechnen.
+ Wenn nun A der Kehrwert dieses Werte ist, ergibt sich H(z) an der Stelle
+ z = 1 als 1.
+ Der Beweis ergibt sich wie folgt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H(z)\mid_{z=1} & =A\cdot\frac{(1-e^{j\varTheta_{0}})\cdot(1-e^{-j\varTheta_{0}})}{(1-r_{p}\cdot e^{j\varTheta_{0}})\cdot(1-r_{p}\cdot e^{-j\varTheta_{0}})}\\
+A & =\frac{(1-r_{p}\cdot e^{j\varTheta_{0}})\cdot(1-r_{p}\cdot e^{-j\varTheta_{0}})}{(1-e^{j\varTheta_{0}})\cdot(1-e^{-j\varTheta_{0}})}\;\Rightarrow\\
+H(z)\mid_{z=1} & =\frac{(1-r_{p}\cdot e^{j\varTheta_{0}})\cdot(1-r_{p}\cdot e^{-j\varTheta_{0}})}{(1-e^{j\varTheta_{0}})\cdot(1-e^{-j\varTheta_{0}})}\cdot\frac{(1-e^{j\varTheta_{0}})\cdot(1-e^{-j\varTheta_{0}})}{(1-r_{p}\cdot e^{j\varTheta_{0}})\cdot(1-r_{p}\cdot e^{-j\varTheta_{0}})}=1
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da sich die Pole und Nullstellen der Übertragungsfunktion mit den Polen
+ und Nullstellen von A kürzen, ergibt sich 
+\begin_inset Formula $H(z)\mid_{z=1}=1$
+\end_inset
+
+ .
+ Nun muss nur noch A berechnet werden
+\begin_inset Formula 
+\begin{align*}
+A & =\frac{(1-r_{p}\cdot e^{j\varTheta_{0}})\cdot(1-r_{p}\cdot e^{-j\varTheta_{0}})}{(1-e^{j50,42})\cdot(1-e^{-j50,42})}\\
+A & =\frac{1-r_{p}\cdot e^{-j\varTheta_{0}}-r_{p}\cdot e^{j\varTheta_{0}}+r_{p}^{2}\cdot e^{j\varTheta_{0}-j\varTheta_{0}}}{1-e^{-j\varTheta_{0}}-e^{j\varTheta_{0}}-e^{j\varTheta_{0}-j\varTheta_{0}}}\\
+A & =\frac{1-r_{p}\cdot(e^{-j\varTheta_{0}}+e^{j\varTheta_{0}})-r_{p}^{2}}{1-(e^{-j\varTheta_{0}}-e^{j\varTheta_{0}})+1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Durch Anwendung der Beziehung 
+\begin_inset Formula $cos(\omega t)=\frac{1}{2}(e^{j\omega t}+e^{-j\omega t})$
+\end_inset
+
+ vereinfacht sich die obrige Formel nun auf folgenden Ausdruck:
+\begin_inset Formula 
+\[
+A=\frac{1-r_{p}\cdot2\cdot cos(\varTheta_{0})-r_{p}^{2}}{2-2\cdot cos(\varTheta_{0})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wenn nun A dieser Faktor ist, ergibt sich wie gefordert 
+\begin_inset Formula $H(z)\mid_{z=1}=1$
+\end_inset
+
+.
+ Wichtig anzumerken ist, dass dieser Term keine zusätzlichen Pole oder Nullstell
+en hinzufügt, da die Cosinus-Terme konstante Zahlenwerte abhängig von 
+\begin_inset Formula $\varTheta_{0}$
+\end_inset
+
+ sind und nicht der Verlauf der Cosinus-Funktion des Winkels 
+\begin_inset Formula $\varTheta$
+\end_inset
+
+sind.
+\end_layout
+
+\begin_layout Section*
+(e)
+\end_layout
+
+\begin_layout Standard
+Es ist zu bestimmen, für welchen Wertebereich für 
+\begin_inset Formula $r_{p}$
+\end_inset
+
+ H(z) kausal und stabil ist.
+\end_layout
+
+\begin_layout Standard
+Wie in den Pol-Nullstellen Diagrammen in Punkt b zu sehen ist, geht das
+ ROC falls H(z) kausal ist von 
+\begin_inset Formula $+\infty$
+\end_inset
+
+bis zum Radius der äußersten Polstellen.
+ Falls H(z) akausal ist, geht das ROC vom Nullpunkt bis zum Radius der innersten
+ Polstellen.
+ Da beide Polstellen den Radius 
+\begin_inset Formula $r_{p}$
+\end_inset
+
+ besitzen, hängt die Lage des ROC ausschließlich von diesem Radius ab.
+ Weiters ist zu berücksichtigen, dass ein System stabil ist, wenn der Einheitskr
+eis im ROC liegt.Somit ist das kausale System stabil für alle 
+\begin_inset Formula $r_{p}<1$
+\end_inset
+
+ und das akausale System stabil für alle 
+\begin_inset Formula $r_{p}>1$
+\end_inset
+
+.
+ Hier ist wiederum auffällig, dass für 
+\begin_inset Formula $r_{p}=1$
+\end_inset
+
+ keines der beiden Systeme stabil ist, da die Polstelle somit am Einheitskreis
+ liegt und unabhängig der Kausalität der Einheitskreis nicht im ROC liegt
+\end_layout
+
+\end_body
+\end_document

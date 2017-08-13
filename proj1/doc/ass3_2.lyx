@@ -1,0 +1,924 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\date{}
+
+\usepackage{todonotes}
+\bibliographystyle{plain}
+\usepackage{fancyhdr}
+\fancyhf{}% Clear header footer
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_author "Peter Lorenz"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Left Header
+LORENZ Peter, REICHEL Robert
+\begin_inset space \hfill{}
+\end_inset
+
+ Assignment 3
+\end_layout
+
+\begin_layout Section*
+Analytische Aufgabe 3.2
+\end_layout
+
+\begin_layout Subsection*
+a) Ermittlung der Übertragungsfunktion 
+\end_layout
+
+\begin_layout Standard
+Aus der gegebenen Differenzengleichung, welche ein System beschreibt ist
+ die Übertragungsfunktion des Systems mithilfe der z-Transformation zu berechnen.
+\end_layout
+
+\begin_layout Standard
+Zuerst wird die Differenzengleichung allgemein transformiert und anschließend
+ die Übertragungsfunktion berechnet:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+y[n] & = & b_{0}x[n]+b_{1}x[n-1]+b_{2}x[n-2]-a_{1}y[n-1]-a_{2}y[n-2]-a_{3}y[n-3]\\
+Y(z) & = & b_{0}X(z)+b_{1}X(z)z^{-1}+b_{2}X(z)z^{-2}-a_{1}Y(z)z^{-1}-a_{2}Y(z)z^{-2}-a_{3}Y(z)z^{-3}\\
+ &  & b_{0}X(z)+b_{1}X(z)z^{-1}+b_{2}X(z)z^{-2}=Y(z)+a_{1}Y(z)z^{-1}+a_{2}Y(z)z^{-2}+a_{3}Y(z)z^{-3}\\
+ &  & Y(z)\left(1+\frac{a_{1}}{z}+\frac{a_{2}}{z^{2}}+\frac{a_{3}}{z^{3}}\right)=X(z)\left(b_{0}+\frac{b_{1}}{z}+\frac{b_{2}}{z^{2}}\right)\\
+H(z) & = & \frac{Y(z)}{X(z)}=\frac{b_{0}+\frac{b_{1}}{z}+\frac{b_{2}}{z^{2}}}{1+\frac{a_{1}}{z}+\frac{a_{2}}{z^{2}}+\frac{a_{3}}{z^{3}}}=\frac{\left(b_{0}z^{2}+b_{1}z+b_{2}\right)z^{3}}{\left(z^{3}+a_{1}z^{2}+a_{2}z+a_{3}\right)z^{2}}\\
+ & = & \frac{\left(b_{0}z^{2}+b_{1}z+b_{2}\right)z}{z^{3}+a_{1}z^{2}+a_{2}z+a_{3}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b) Ermittlung aller Nullstellen und Polstellen des Systems
+\end_layout
+
+\begin_layout Standard
+Nun sind mithilfe der gegebenen Filterkoeffizienten 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+,
+\begin_inset Formula $a_{2}$
+\end_inset
+
+,
+\begin_inset Formula $a_{3}$
+\end_inset
+
+,
+\begin_inset Formula $b_{0}$
+\end_inset
+
+,
+\begin_inset Formula $b_{1}$
+\end_inset
+
+,
+\begin_inset Formula $b_{2}$
+\end_inset
+
+ und unter Zuhilfename eines Pols bei 
+\begin_inset Formula $z_{\infty,1}=\frac{1}{\sqrt{2}}$
+\end_inset
+
+alle Polstellen und Nullstellen des Systems zu bestimmen.
+\end_layout
+
+\begin_layout Standard
+Hierzu werden das Nennerpolynom und das Zählerpolynom getrennt betrachtet
+ und deren Nullstellen berechnet.
+ Aus den Nullstellen des Zählerpolynomes ergeben sich die Nullstellen des
+ Systems,
+\end_layout
+
+\begin_layout Standard
+aus den Nullstellen des Nennerpolynomes die Polstellen des Systems.
+\end_layout
+
+\begin_layout Standard
+Zuerst wird das Zählerpolynom betrachtet:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z(z)=\left(b_{0}z^{2}+b_{1}z+b_{2}\right)z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Durch den Produkt-Null Satz kann direkt eine Nullstelle bei 
+\begin_inset Formula $z_{0,1}=0$
+\end_inset
+
+ abgelesen werden.
+ Um die zwei verbleibenden Nullstellen zu berechnen ist die quadratische
+ Gleichung zu lösen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+b_{0}z^{2}+b_{1}z+b_{2} & =0\\
+z^{2}+z(2e^{j\frac{\pi}{2}}+\frac{1}{2}e^{-j\frac{\pi}{2}}) & -e^{j\pi}=z^{2}+z\frac{3}{2}j+1=0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Diese quadratische Lösung wird nun mithilfe der Lösungsformel gelöst:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+z_{0,2/3} & =-\frac{p}{2}\pm\sqrt{\frac{p^{2}}{4}-q}\\
+ & z^{2}+pz+q=0\\
+ & \Rightarrow p=\frac{3}{2}j,q=1\\
+ & =-\frac{\frac{3j}{2}}{2}\pm\sqrt{\frac{(-\frac{3j}{2})^{2}}{4}-1}\\
+ & =-\frac{3j}{4}\pm\sqrt{\frac{\frac{-9}{4}}{4}-1}\\
+ & =-\frac{3j}{4}\pm\sqrt{-\frac{9}{16}-\frac{16}{16}}\\
+ & =-\frac{3j}{4}\pm\sqrt{-\frac{25}{16}}\\
+ & =-\frac{3j}{4}\pm\frac{5j}{4}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mithilfe dieser Formel ergeben sich die Nullstellen des quadratischen Polynoms
+ bei:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+z_{0,2} & =\frac{j}{2}\\
+z_{0,2} & =-2j
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nun werden die Polstellen des Systems ermittelt.
+ Hierzu berechnet man zuerst aus dem Polynom dritten Grades eine quadratische
+ Polynom, indem man das Polynom durch die gegebene Nullstelle berechnet:
+\end_layout
+
+\begin_layout Standard
+(Die Polynomdivision wird hier stückweise durchgeführt, um das Ergebnis
+ besser nachvollziehen zu können.
+ Diese Schritte wurden in der Ausarbeitung als eine kompakte Polynomdivision
+ durchgeführt und werden hier als mehrere Divisionen dargestellt, wobei
+ jeweils der Rest der vorherigen Division der Divisor der nächsten Division
+ darstellt.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{(z^{3}+z^{2}a_{0}+za_{1}+a_{2})}{(z-z_{\infty,1})} & =\frac{z^{3}-\frac{1}{4}z-\frac{1}{32}}{z-\frac{1}{\sqrt{2}}}\\
+(z^{3}-\frac{1}{4}z-\frac{1}{32}):(z-\frac{1}{\sqrt{2}}) & =z^{2}\\
+(\frac{1}{\sqrt{2}}z^{2}--\frac{1}{4}z-\frac{1}{32}):(z-\frac{1}{\sqrt{2}}) & =\frac{1}{\sqrt{2}}z\\
+(\frac{1}{4}z-\frac{1}{\sqrt{32}}):(z-\frac{1}{\sqrt{2}}) & =\frac{1}{4}\\
+0\;Rest\\
+\Rightarrow\frac{z^{3}-\frac{1}{4}z-\frac{1}{32}}{z-\frac{1}{\sqrt{2}}} & =z^{2}+\frac{1}{\sqrt{2}}z+\frac{1}{4}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um diese Gleichung zu lösen wird wiederum die quadratische Lösungsformel
+ verwendet, woraus sich die folgenden Polstellen ergeben:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+z^{2}+\frac{1}{\sqrt{2}}z+\frac{1}{4} & =0\\
+p=\frac{1}{\sqrt{2}} & ,\quad q=\frac{1}{4}\\
+ & =-\frac{\frac{1}{\sqrt{2}}}{2}\pm\sqrt{\frac{(\frac{1}{\sqrt{2}})^{2}}{4}-\frac{1}{4}}\\
+ & =-\frac{1}{\sqrt{8}}\pm\sqrt{\frac{\frac{1}{2}}{4}-\frac{1}{4}}\\
+ & =-\frac{1}{\sqrt{8}}\pm\sqrt{-\frac{1}{8}}\\
+ & =-\frac{1}{\sqrt{8}}\pm\frac{j}{\sqrt{8}}\\
+z_{\infty,2} & =-\frac{1}{\sqrt{8}}-j\frac{1}{\sqrt{8}}\\
+z_{\infty,3} & =-\frac{1}{\sqrt{8}}+j\frac{1}{\sqrt{8}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+c) Pol-Nullstellen Diagramm und ROC
+\end_layout
+
+\begin_layout Standard
+Das Pol-Nullstellen Diagramm des Systems ist zu zeichnen.
+ Zusätzlich ist das System auf Kausalität, Stabilität und Minimalphasigkeit
+ zu untersuchen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pn-32.jpeg
+	scale 25
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pol-Nullstellen Diagramm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nun wird das System auf folgende Eigenschaften untersucht:
+\end_layout
+
+\begin_layout Standard
+1.)
+\series bold
+Kausalität
+\series default
+: Ein System kann als kausal bezeichnet werden, wenn das Ausgangssignal
+ y[n] nur von aktuellen und/oder den vergangenen Eingangs- und Ausgangssignalen
+ abhängt.
+\end_layout
+
+\begin_layout Standard
+Da in der Angabe gegeben ist, dass x[n] das Eingangssignal ist und y[n]
+ das Ausgangssignal ist, ist diese Bedingung bei diesem System erfüllt und
+ somit kann dieses System als kausal beschrieben werden.
+\end_layout
+
+\begin_layout Standard
+Anzumerken ist, dass über ein System, welches nur durch eine Differenzengleichun
+g gegeben ist, keine Aussage bezüglich der Kausalität gegeben werden kann,
+ solange nicht definiert ist, was das Eingangs- und Ausgangsignal ist.
+\end_layout
+
+\begin_layout Standard
+Wäre zum Beispiel bei diesem System y[n-1] das Ausgangssignal, so wäre das
+ System nicht kausal, da y[n-1] von y[n] abhängig wäre.
+\end_layout
+
+\begin_layout Standard
+2.)
+\series bold
+Stabilität
+\series default
+: Ein System ist stabil, wenn der Einheitskreis im ROC liegt.
+ Da Das vorliegende System kausal ist, ist das ROC das Gebiet, welches von
+ Unendlich bis zum äußerstem Pol des Systems reicht.
+\end_layout
+
+\begin_layout Standard
+Wie im Pol-Nullstellen Diagramm dargestellt ist, liegt der Einheitskreis
+ im ROC, wodurch das System stabil ist.
+\end_layout
+
+\begin_layout Standard
+3.) 
+\series bold
+Minimalphasigkeit
+\series default
+: Ein System ist minimalphasig, wenn alle Pole und Nullstellen im Einheitskreis
+ liegen.
+ Da das zu betrachtende System eine Nullstelle bei 
+\begin_inset Formula $z_{0,2}=-2j$
+\end_inset
+
+ besitzt, ist dieses System nicht minimalphasig.
+\end_layout
+
+\begin_layout Subsection*
+d) Ermittlung der Impulsantwort 
+\begin_inset Formula $h[n]$
+\end_inset
+
+, Ermittlung eines Eingangssignals, durch welches y[n] rein reellwertig
+ ist.
+\end_layout
+
+\begin_layout Standard
+Da die z-Transformierte der Impulsantwort, H(z), nicht ausschließlich Pole
+ und Nullstellen, welche konjugiert komplex auftreten, kann h[n] nicht rein
+ reellwertig sein,
+\end_layout
+
+\begin_layout Standard
+da ein rein reellwertiges Polynom ausschließlich rein reellwertige Nullstellen
+ oder konjugiert komplexe Nullstellen hat.
+\end_layout
+
+\begin_layout Standard
+Um ein rein reellwertiges Ausgangssignal y[n] zu ermitteln, muss zuerst
+ ein Zusammenhang zwischen dem Eingangssignal, der Übertragungsfunktion
+ und dem Ausgangssignal gefunden werden.
+ Es gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y(z)=X(z)H(Z),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+wobei Y(z) und X(z) die z-Transformierten des Ausgangs- bzw Eingangssignals
+ ist.
+\end_layout
+
+\begin_layout Standard
+Die Übertragungsfunktion H(z) lautet:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(z)=\frac{z(z+2j)(z-\frac{j}{2})}{(z-\frac{1}{\sqrt{2}})(z+\frac{1}{\sqrt{8}}-\frac{j}{\sqrt{8}})(z+\frac{1}{\sqrt{8}}+\frac{j}{\sqrt{8}})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wenn y[n] reellwertig sein soll, so muss Y(z) rein reellwertige Pole bzw.
+ Nullstellen oder konjugiert komplexe Pole bzw.
+ Nullstellen haben.
+ Um dies sicherzustellen, muss die Multiplikation mit X(z) die Nullstellen
+ bei 
+\begin_inset Formula $z_{0,2}=-2j$
+\end_inset
+
+ und 
+\begin_inset Formula $z_{0,1}=\frac{j}{2}$
+\end_inset
+
+ eliminieren.
+\end_layout
+
+\begin_layout Standard
+Betrachtet man nun die beiden Nullstellen, welche die Probleme verursachen
+ genauer, so fällt auf, dass:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(z+2j)(z-\frac{j}{2})=z^{2}+2z\left(\frac{3j}{4}\right)+1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+gilt, was eine sehr starke Ähnlichkeit mit dem Zähler folgender Korrespondenz
+ aus der Formelsammlung aufweist:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+sin(\alpha n)u[n]\leftrightharpoons\frac{z\cdot sin(\alpha)}{z^{2}+2z\cdot cos(\alpha)+1},\quad\alpha_{\in}\mathbb{C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aufgrund dieser Korrespondenz setzen wir nun als Versuch eine Ähnlichkeit
+ zu finden die beiden obrigen Formeln gleich, wobei vorerst nur der Nenner
+ der gefundenen Korrespondenz von Interesse ist:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+z^{2}+2z(\frac{3j}{4})+1= & z^{2}+2z\cdot cos(\alpha)+1\\
+\Rightarrow2z\cdot cos(\alpha) & =2z\left(\frac{3j}{4}\right)\\
+cos(\alpha) & =\left(\frac{3j}{4}\right)\\
+\alpha & =arccos\left(\frac{3j}{4}\right)=\frac{\pi}{2}-j\cdot log(2)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Auf diese Weise wird sichergestellt, dass die beiden Nullstellen, welche
+ nicht konjugiert komplex auftreten, sich mit dem Nenner des Eingangssignals
+ kürzen und somit das entstehende Ausganssignal rein reellwertig wird.
+\end_layout
+
+\begin_layout Standard
+Setzt man diesen Wert für α nun in die gefundene Korrespondenz ein erhält
+ man:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Y(z) & =X(z)H(z)\\
+ & =\frac{z(z^{2}+2z\left(\frac{3j}{4}\right)+1)}{(z-\frac{1}{\sqrt{2}})(z+\frac{1}{\sqrt{8}}-\frac{j}{\sqrt{8}})(z+\frac{1}{\sqrt{8}}+\frac{j}{\sqrt{8}})}\cdot\frac{z\cdot sin(\frac{\pi}{2}-i\cdot log(2))}{z^{2}+2z\cdot cos(\frac{\pi}{2}-i\cdot log(2))+1}\\
+ & =\frac{z(z^{2}+2z\left(\frac{3j}{4}\right)+1)}{(z-\frac{1}{\sqrt{2}})(z+\frac{1}{\sqrt{8}}-\frac{j}{\sqrt{8}})(z+\frac{1}{\sqrt{8}}+\frac{j}{\sqrt{8}})}\cdot\frac{z\cdot\frac{5}{4}}{z^{2}+2z\cdot\left(\frac{3j}{4}\right)+1}\\
+ & =\frac{z^{2}\cdot\frac{5}{4}}{(z-\frac{1}{\sqrt{2}})(z+\frac{1}{\sqrt{8}}-\frac{j}{\sqrt{8}})(z+\frac{1}{\sqrt{8}}+\frac{j}{\sqrt{8}})}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hier sieht man, dass das Signal Y(z) nun ausschließlich rein reellwertige
+ oder konjugiert komplexe Pole und Nullstellen besitzt, woraus sich ergibt,
+ dass y[n] rein reellwertig ist.
+ Somit ist für das Eingangsignal
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x[n]=sin\left((\frac{\pi}{2}-j\cdot log(2))n\right)u[n]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+das Ausgangssignal y[n] rein reellwertig.
+\end_layout
+
+\begin_layout Subsection*
+e) Ermittlung des Minimalphasensystem
+\end_layout
+
+\begin_layout Standard
+Es ist ein Minimalphasensystem zu bestimmen, für welches gilt 
+\begin_inset Formula $|H(z)|=|H_{m}(z)|$
+\end_inset
+
+ wobei 
+\begin_inset Formula $H(z)=H_{a}(z)H_{m}(z)$
+\end_inset
+
+ ebenfalls gegeben sein muss.
+\end_layout
+
+\begin_layout Standard
+Durch diese Vorraussetzungen ergibt sich, dass 
+\begin_inset Formula $|H_{a}(z)|=1$
+\end_inset
+
+ konstant für alle Frequenzen gelten muss, sowie dass 
+\begin_inset Formula $H_{m}(z)$
+\end_inset
+
+ minimalphasig sein muss.
+\end_layout
+
+\begin_layout Standard
+Hierbei geht es darum, dass sich ein System immer in einen Minimalphasigen
+ Teil und einen Teil mit Allpasseigenschaft zerlegen lässt.
+\end_layout
+
+\begin_layout Standard
+Allgemein werden dabei alle Pole und Nullstellen, welche die Minimalphasigkeit
+ des Systems verhindern in den Allpassanteil geschrieben, wodurch der Minimalpha
+senteil die erforderliche Eigenschaft auch erfüllt.
+ Dadurch wird jedoch der Betragsgang des Allpassanteils verändert.
+ Deswegen müssen weitere Pole oder Nullstellen zum Allpassanteil hinzugefügt
+ werden, um den Betragsfrequenzgang konstant zu halten.
+\end_layout
+
+\begin_layout Standard
+Durch die Betrachtung von H(z) werden nun die Pole und Nullstellen ermittelt,
+ welche die Eigenschaft der Minimalphasigkeit verhindern:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(z)=\frac{z(z+2j)(z-\frac{j}{2})}{(z-\frac{1}{\sqrt{2}})(z+\frac{1}{\sqrt{8}}-\frac{j}{\sqrt{8}})(z+\frac{1}{\sqrt{8}}+\frac{j}{\sqrt{8}})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hier wird nun ersichtlich, dass, um H(z) auf ein 
+\begin_inset Formula $H_{m}(z)$
+\end_inset
+
+ umzuformen, die Nullstelle bei 
+\begin_inset Formula $z_{0,2}=-2j$
+\end_inset
+
+ aus dem Minimalphasenanteil eliminiert werden muss.
+ Somit muss 
+\begin_inset Formula $H_{a}(z)$
+\end_inset
+
+ folgende Form haben:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{a}(z)=A\cdot\frac{(z+2j)}{f(z)},\quad A_{\in}\mathbb{R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wobei f(z) sicherstellen muss, dass der Betrag von 
+\begin_inset Formula $H_{a}(z)$
+\end_inset
+
+ konstant ist und der multiplikative Faktor A sicherstellen muss, dass der
+ Betrag den Wert 1 hat.
+ Das wird erfüllt, indem man f(z) so wählt, dass der Winkel von f(z) und
+ dem Pol bei -2j derselbe ist, jedoch der Betrag reziprok ist:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+z_{\infty} & =-2j=2e^{-j\frac{\pi}{2}}=|z_{\infty}|\cdot e^{j\cdot arg(z)}\\
+z_{0} & =\frac{1}{|z_{\infty}|}e^{j\cdot arg(z)}=0,5e^{-j\frac{\pi}{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um sicherzustellen, dass der Betrag der neu gewonnenen Funktion konstant
+ ist, wird dieser berechnet.
+ Hier ist anzumerken, dass z durch 
+\begin_inset Formula $e^{j\varTheta}$
+\end_inset
+
+ ersetzt wird, um den Betrag einfacher zu berechen.
+ Dies kommt der Berechnung des Betrags der DTFT gleich:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+|H_{a}(e^{j\varTheta})| & =|A|\cdot|\frac{(e^{j\varTheta}-2e^{-j\frac{\pi}{2}})}{(e^{j\varTheta}-0,5e^{-j\frac{\pi}{2}})}|\\
+ & =|A|\cdot|e^{j\varTheta}|\cdot|2e^{-j\frac{\pi}{2}}|\cdot|\frac{\frac{1}{2e^{-j\frac{\pi}{2}}}-e^{-j\varTheta}}{(e^{j\varTheta}-\frac{1}{2}e^{-j\frac{\pi}{2}})}|\\
+ & =|A|\cdot|e^{j\varTheta}|\cdot|2e^{-j\frac{\pi}{2}}|\cdot|\frac{-(e^{-j\varTheta}-\frac{1}{2}e^{j\frac{\pi}{2}})}{(e^{j\varTheta}-\frac{1}{2}e^{-j\frac{\pi}{2}})}|\\
+ & =|A|\cdot|e^{j\varTheta}|\cdot|2e^{-j\frac{\pi}{2}}|\cdot|\frac{-c}{c^{*}}|,
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+wobei c eine komplexe Zahl darstellt.
+ Diese Schreibweise wird verwendet, um den Betrag des letzten Termes klarer
+ darzustellen und zu verdeutlichen, dass eine komplexe Zahl durch ihre konjugier
+t komplexe Zahl dividiert wird..
+ Durch diese Umformungen wird nun ersichtlich, dass der Betrag von 
+\begin_inset Formula $H_{a}(z)$
+\end_inset
+
+ gegeben ist durch:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+|H_{a}(e^{j\varTheta})| & =|A|\cdot|e^{j\varTheta}|\cdot|2e^{-j\frac{\pi}{2}}|\cdot|\frac{-c}{c^{*}}|\\
+ & =|A|\cdot1\cdot2\cdot1
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Setzt man nun für 
+\begin_inset Formula $|H_{a}(z)|=1$
+\end_inset
+
+ein, kann der Faktor A berechnet werden:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+1 & =|A|\cdot2\\
+|A| & =\frac{1}{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Somit ist das System gegeben durch:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H(z) & =H_{a}(z)H_{m}(z)\\
+ & =\frac{z(z-\frac{j}{2})(z+0,5j)}{(z-\frac{1}{\sqrt{2}})(z+\frac{1}{\sqrt{8}}-\frac{j}{\sqrt{8}})(z+\frac{1}{\sqrt{8}}+\frac{j}{\sqrt{8}})}\cdot\frac{1}{2}\cdot\frac{(z+2j)}{(z+0,5j)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Term 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+(z+0,5j) muss im Zähler von
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $H_{m}(z)$
+\end_inset
+
+ ergänzt werden, um die Übertragungsfunktion nicht zu verfälschen.
+ Hier ist nun klar zu sehen, dass alle Pole und Nullstellen von 
+\begin_inset Formula $H_{m}(z)$
+\end_inset
+
+ im Einheitskreis liegen und es gelten die in der Angabe gegebenen Gleichungen.
+\end_layout
+
+\begin_layout Standard
+Die Impulsantwort ist jeodch nicht rein reellwertig, da H(z) wieder Nullstellen
+ aufweist, welche nicht konjugiert komplex auftreten.
+\end_layout
+
+\begin_layout Subsection*
+f) Serienschaltung von 2 Systemen, Berechnung von c
+\end_layout
+
+\begin_layout Standard
+Es wird nun ein System 
+\begin_inset Formula $H_{2}(z)=c,\quad c_{\mathbb{\in}}\mathbb{C}$
+\end_inset
+
+ in Serie zum bestehenden System geschalten, wobei es sich bei c um eine
+ Konstante handelt.
+ 
+\begin_inset Formula $H_{2}(z)$
+\end_inset
+
+ ist so zu wählen, dass 
+\begin_inset Formula $H_{3}(e^{j\varTheta})|_{\varTheta=0}=1$
+\end_inset
+
+ gilt, wobei 
+\begin_inset Formula $H_{3}(z)=H(z)H_{2}(z)$
+\end_inset
+
+ ebenfalls gegeben ist.
+\end_layout
+
+\begin_layout Standard
+Zuerst wird nun 
+\begin_inset Formula $H_{3}(e^{j\varTheta})|_{\varTheta=0}$
+\end_inset
+
+ berechnet:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H_{3}(e^{j\varTheta})|_{\varTheta=0} & =H_{3}(1)=H_{2}(1)H(1)\\
+ & =\frac{(1-\frac{j}{2})(1+\frac{j}{2})}{(1-\frac{1}{\sqrt{2}})(1+\frac{1}{\sqrt{8}}-\frac{j}{\sqrt{8}})(1+\frac{1}{\sqrt{8}}+\frac{j}{\sqrt{8}})}\cdot\frac{1}{2}\cdot\frac{(1+2j)}{(1+\frac{j}{2})}\cdot c\\
+ & =\frac{(1-\frac{j}{2})(1+2j)}{(1-\frac{1}{\sqrt{2}})(1+\frac{1}{\sqrt{8}}-\frac{j}{\sqrt{8}})(1+\frac{1}{\sqrt{8}}+\frac{j}{\sqrt{8}})}\cdot\frac{1}{2}=\frac{1}{2}\cdot\frac{2+\frac{3j}{2}}{(1-\frac{1}{\sqrt{2}})(\frac{5}{4}+\frac{1}{\sqrt{2}})}\cdot c\\
+ & =\frac{1}{2}\cdot\frac{2+\frac{3j}{2}}{\frac{3}{4}-\frac{1}{\sqrt{2}\cdot4}}\cdot c=\frac{c}{2}\cdot(3,49+2,62j)\\
+H_{3}(e^{j\varTheta})|_{\varTheta=0} & =\frac{c}{2}\cdot(3,49+2,62j)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aus dieser Gleichung kann nun c berechnet werden:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H_{3}(e^{j\varTheta})|_{\varTheta=0} & =\frac{c}{2}\cdot(3,49+2,62j)=1\\
+c & =\frac{2}{(3,49+2,62j)}=0,367-0,275j
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Somit ergibt sich nun 
+\begin_inset Formula $H_{3}(e^{j\varTheta})|_{\varTheta=0}=1$
+\end_inset
+
+.
+ Auffällig ist hier, dass sowohl 
+\begin_inset Formula $H_{3}(z)$
+\end_inset
+
+ sowie 
+\begin_inset Formula $H(z)$
+\end_inset
+
+ dasselbe Pol-Nullstellen Diagramm besitzen.
+ Daraus kann geschlussfolgert werden, dass aus dem Pol-Nullstellen Diagramm
+ nur die Lage der Pole und Nullstellen ausgelesen werden können.
+ Multiplikative Faktoren, wie zum Beispiel c, welche nichts an der Lage
+ der Pole und Nullstellen verändern, sind in diesem Diagramm nicht enthalten.
+ Somit ist klar, dass eine Übertragungsfunktion nie eindeutig aus dem Pol-Nullst
+ellen Diagramm ausgelesen werden kann, da genau diese Faktoren nicht berücksicht
+igt werden, was auf die Übertragungsfunktion jedoch erheblichen Einfluss
+ haben kann.
+ 
+\end_layout
+
+\end_body
+\end_document

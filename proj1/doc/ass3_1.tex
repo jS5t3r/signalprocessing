@@ -1,0 +1,122 @@
+%% LyX 2.2.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[twoside,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,lmargin=2cm,rmargin=2cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\parindent}{0bp}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfauthor={Peter Lorenz}}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\date{}
+
+\usepackage{todonotes}
+\bibliographystyle{plain}
+\usepackage{fancyhdr}
+\fancyhf{}% Clear header footer
+
+\makeatother
+
+\begin{document}
+
+\lhead{LORENZ Peter, REICHEL Robert\hfill{} Assignment 3}
+
+\section*{Analytische Aufgabe 3.1}
+
+\section*{(a) }
+
+\[
+X(z)=\frac{(z-1)(z+\frac{3}{2})}{(z-\frac{1}{2})(z+\frac{j}{2})(z-\frac{j}{2})},\;H_{1}(z)=(z-\frac{j}{2})
+\]
+
+Aus der Formelsammlung haben wir folgenden Zusammenhang gefunden:
+
+\[
+Y_{1}(z)=X(z)H_{1}(z)\longleftrightarrow y_{1}[n]s=(x*h_{1})[n]
+\]
+
+Wenn wir den Z‰hler erweitern mit $H_{1}(z)=(z-\frac{j}{2})$:
+\[
+Y_{1}(z)=\frac{(z-1)(z+\frac{3}{2})(z-\frac{j}{2})}{(z-\frac{1}{2})(z+\frac{j}{2})(z-\frac{j}{2})}=\frac{(z-1)(z+\frac{3}{2})}{(z-\frac{1}{2})(z+\frac{j}{2})}
+\]
+
+Im Z‰hler kann man nun die Nullstellen ablesen $NST_{1}=1$ und $NST_{2}=-\frac{3}{2}$.
+
+\begin{figure}[H]
+
+\caption{Da $h_{i}$ und $x[n]$ kausal sind, ist das ROC das einer kausalen
+Folge.}
+
+\end{figure}
+
+$y_{1}[n]$ kann nicht reellwertig sein. Eine rellewerte Funktion
+besitzt ausschlieﬂlich komplex konjugierte Pol- \& Nullstellen. Bei
+$y_{1}[z]$ tritt der Pol $P_{1}=-\frac{j}{2}$ nicht komplex konjugiert
+als $P_{2}=\frac{j}{2}$ auf. Daher kann $y_{1}[n]$ nicht rein reellwertig
+sein. 
+
+\section*{(b)}
+
+\[
+Y_{2}=X(z)\cdot H_{2}(z)=\frac{(z-1)(z+\frac{3}{2})}{(z-\frac{1}{2})(z+\frac{j}{2})(z-\frac{j}{2})}\cdot\frac{1}{z}=X(z)\cdot z^{-1}
+\]
+
+Aus der Formelsammlung:
+
+\[
+x[n-M]\longleftrightarrow X(z)z^{-M}
+\]
+
+Daraus l‰sst sich das Ergebnis mit einer Verschiebung um 1 darstellen: 
+
+\[
+y_{2}[n]=x[n-1]
+\]
+
+
+\section*{(c)}
+
+\[
+Y_{3}(z)=X(z)\cdot H_{3}(z)=\frac{(z-1)(z+\frac{3}{2})}{(z-\frac{1}{2})(z-\frac{j}{2})(z+\frac{j}{2})}
+\]
+
+\begin{figure}[H]
+\caption{ROC von $Y_{3}(z)$}
+\end{figure}
+
+Ein System ist minimalphasig, wenn die z-Transformierte und dessen
+Inverse BIBO stabil sind. Ein System ist BIBO stabil, wenn der Einheitskreis
+im ROC liegt. Bei $Y_{3}(z)$ ist dies der Fall, bei $Y_{3}(z)^{-1}$
+jedoch nicht, da die Polstell von $Y_{3}(2)^{-1}$ am Einheitskreis
+liegt und das ROC somit auﬂerhalb des Einheitskreis leigt. Daraus
+folgt, $Y_{3}(z)$ ist nicht minimalphasig!
+
+\section*{(d)}
+
+\[
+Y_{4}(z)=X(z)\cdot H_{4}(z)=\frac{z+\frac{3}{2}}{(z+\frac{j}{2})(z-\frac{j}{2})(z-\frac{1}{2})}
+\]
+
+\[
+Y_{4}(z)=\underset{X(z)}{\underbrace{\frac{(z+\frac{3}{2})(z-1)}{(z+\frac{1}{2})(z-\frac{j}{2})(z-\frac{1}{2})}}}\cdot\underset{H_{4}(z)}{\underbrace{\frac{1}{z-1}}}
+\]
+
+\begin{figure}[H]
+\caption{ROC von $Y_{4}(z)$}
+\end{figure}
+
+$H_{4}$ist nicht stabil, da der Einheitskreis nicht im ROC liegt.
+\end{document}
+\grid
