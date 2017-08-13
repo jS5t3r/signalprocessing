@@ -1,5 +1,5 @@
 # Signal Processing
-Determining, if system is stable.
+Determining, if a system is stable.
 
 [![Build Status](https://travis-ci.org/tompollard/phd_thesis_markdown.svg?branch=master)](https://travis-ci.org/tompollard/phd_thesis_markdown)  
 
